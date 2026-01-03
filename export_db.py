@@ -85,8 +85,8 @@ def export_users():
         record_count = len(df)
 
         # insert log record
-        insert_log_sql = """
-        INSERT INTO export_log
+        insert_log_sql = f"""
+        INSERT INTO {LOG_TABLE}
         (file_name, date_created, record_count, select_time, write_time)
         VALUES (:file_name, :date_created, :record_count, :select_time, :write_time)
         """
